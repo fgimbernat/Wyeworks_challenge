@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:14
+    env_file: ./build/env/db_development.env
+    volumes:
+      - db:/var/lib/postgresql/data
+  web:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+      args:
+        ENV: development
+    tty: true
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    env_file:
+     - ./build/env/development.env
+     - ./build/env/db_development.env
+    stdin_open: true
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+volumes:
+  db:
