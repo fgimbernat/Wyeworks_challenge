@@ -1,24 +1,7 @@
-# README
+To run the service "Album" you should run the command "Album.new" and you will start to see the creations of the lists on Trello: https://trello.com/b/GDWYKn1j/albums.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I previously created the board called "Albums" instead of create a new one each time the service run, to save some development time, but it could be change to do that.
 
-Things you may want to cover:
+I know that the implementation of the solution wasn't on the scope of the challenge, but I thought it could be a good way to show my skills with docker and aplication building.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I also tried to use the Spotify API to get the cover of each album, but unfortunately it requires to know the id of each album and I don't have them
